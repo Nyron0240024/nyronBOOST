@@ -1011,3 +1011,31 @@ document.addEventListener("click", function(event) {
     }
 
 });
+
+
+
+function copyCard(cardId) {
+    const card = document.getElementById(cardId);
+
+    if (!card) return;
+
+    const cardNumber = card.textContent.trim();
+
+    navigator.clipboard.writeText(cardNumber).then(() => {
+
+        const button = card.parentElement.querySelector("button");
+
+        if (!button) return;
+
+        const oldText = button.innerHTML;
+
+        button.innerHTML = "✅ Nusxalandi!";
+
+        setTimeout(() => {
+            button.innerHTML = oldText;
+        }, 1800);
+
+    }).catch(() => {
+        alert("Kartani nusxalashda xatolik yuz berdi.");
+    });
+}
