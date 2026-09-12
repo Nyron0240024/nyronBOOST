@@ -3472,3 +3472,67 @@ button:active,
         font-size: 24px;
     }
 }
+
+/* ===============================
+   CARD COPY BUTTON
+================================ */
+
+.card-copy-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.card-copy-row span {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    word-break: break-word;
+}
+
+.card-copy-row button {
+    flex-shrink: 0;
+    padding: 10px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.card-copy-row button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.card-copy-row button:active {
+    transform: scale(0.96);
+}
+
+/* 📱 TELEFON */
+@media (max-width: 600px) {
+
+    .card-copy-row {
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .card-copy-row span {
+        font-size: 14px;
+    }
+
+    .card-copy-row button {
+        padding: 9px 12px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+}
