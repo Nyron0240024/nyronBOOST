@@ -860,3 +860,154 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(element);
     });
 });
+
+// ===============================
+// POLICY MODALS
+// ===============================
+
+function openPolicy(type) {
+
+    const modal = document.getElementById("policyModal");
+    const content = document.getElementById("policyContent");
+
+    if (!modal || !content) return;
+
+    if (type === "privacy") {
+
+        content.innerHTML = `
+            <h2>🔐 Maxfiylik siyosati</h2>
+
+            <p><strong>Oxirgi yangilanish: 2026-yil</strong></p>
+
+            <h3>1. Ma'lumotlarni himoya qilish</h3>
+            <p>
+                Buyurtma berish vaqtida taqdim etilgan ma'lumotlar
+                faqat buyurtmani bajarish va mijoz bilan bog'lanish
+                maqsadida ishlatiladi.
+            </p>
+
+            <h3>2. Akkaunt xavfsizligi</h3>
+            <p>
+                NYRON BOOST mijoz akkauntini o'g'irlash,
+                sotish yoki uchinchi shaxslarga berishni taqiqlaydi.
+                Akkaunt ma'lumotlari faqat buyurtmani bajarish
+                uchun ishlatiladi.
+            </p>
+
+            <h3>3. Maxfiy ma'lumotlar</h3>
+            <p>
+                Sayt orqali bank karta PIN-kodi, SMS-kod,
+                Telegram kodi yoki boshqa maxfiy tasdiqlash
+                kodlarini yubormang.
+            </p>
+
+            <h3>4. Uchinchi shaxslar</h3>
+            <p>
+                Mijozning shaxsiy va akkaunt ma'lumotlari
+                qonuniy asos bo'lmagan holda uchinchi shaxslarga
+                berilmaydi.
+            </p>
+
+            <h3>5. To'lov ma'lumotlari</h3>
+            <p>
+                To'lov karta ma'lumotlari NYRON BOOST tomonidan
+                saqlanmaydi. To'lov tasdig'i Telegram orqali
+                yuboriladi.
+            </p>
+
+            <h3>6. Aloqa</h3>
+            <p>
+                📲 Telegram: @nyronGG
+            </p>
+        `;
+
+    } else if (type === "rules") {
+
+        content.innerHTML = `
+            <h2>📜 Foydalanish qoidalari</h2>
+
+            <h3>1. Buyurtma berish</h3>
+            <p>
+                Mijoz kerakli xizmatni tanlaydi, buyurtma
+                ma'lumotlarini tekshiradi va ko'rsatilgan
+                summani to'laydi.
+            </p>
+
+            <h3>2. Xizmatlar</h3>
+            <p>
+                🏆 Rank Boost<br>
+                ⭐ Star Boost<br>
+                📈 MMR Up<br>
+                🔥 Winrate Boost<br>
+                💎 Universal / Special Boost
+            </p>
+
+            <h3>3. Akkaunt xavfsizligi</h3>
+            <p>
+                NYRON BOOST akkauntni o'g'irlamaydi, sotmaydi,
+                boshqa shaxsga bermaydi va buyurtma maqsadidan
+                tashqari foydalanmaydi.
+            </p>
+
+            <h3>4. To'lov</h3>
+            <p>
+                To'lovdan oldin xizmat turi, buyurtma ma'lumotlari
+                va yakuniy narxni tekshiring.
+                To'lov amalga oshirilgandan so'ng chekni
+                Telegram orqali yuboring.
+            </p>
+
+            <h3>5. Bekor qilish va qaytarish</h3>
+            <p>
+                Buyurtma bajarilishi boshlanmagan bo'lsa,
+                bekor qilish yoki mablag'ni qaytarish masalasi
+                Telegram orqali individual ko'rib chiqiladi.
+            </p>
+
+            <h3>6. Mijoz huquqlari</h3>
+            <p>
+                Mijoz xizmat, narx va buyurtma shartlari haqida
+                tushunarli ma'lumot olish huquqiga ega.
+            </p>
+
+            <h3>7. Nizolar</h3>
+            <p>
+                Kelishmovchiliklar birinchi navbatda muzokara
+                orqali hal qilinadi. Zarur hollarda nizolar
+                O'zbekiston Respublikasining amaldagi
+                qonunchiligiga muvofiq ko'rib chiqiladi.
+            </p>
+
+            <h3>8. Aloqa</h3>
+            <p>
+                📲 Telegram: @nyronGG
+            </p>
+        `;
+    }
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+
+function closePolicy() {
+
+    const modal = document.getElementById("policyModal");
+
+    if (!modal) return;
+
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+
+// Закрытие при клике вне окна
+document.addEventListener("click", function(event) {
+
+    const modal = document.getElementById("policyModal");
+
+    if (event.target === modal) {
+        closePolicy();
+    }
+
+});
