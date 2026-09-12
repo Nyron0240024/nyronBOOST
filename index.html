@@ -885,6 +885,16 @@
             © 2026 Nyron Boost. All rights reserved.
         </p>
 
+        <div class="footer-links">
+    <button onclick="openPolicy('privacy')">
+        🔐 Maxfiylik siyosati
+    </button>
+
+    <button onclick="openPolicy('rules')">
+        📜 Foydalanish qoidalari
+    </button>
+</div>
+
     </footer>
 
 
@@ -993,6 +1003,19 @@
             </button>
 
         </div>
+
+    </div>
+
+</div>
+
+    <!-- POLICY MODAL -->
+<div id="policyModal" class="policy-modal">
+
+    <div class="policy-box">
+
+        <button class="policy-close" onclick="closePolicy()">×</button>
+
+        <div id="policyContent"></div>
 
     </div>
 
